@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-var velocityWasStored : boolean = false;
+var velocityWasStored : boolean = true;
 var storedVelocity : Vector3;
 
 function Start () {
@@ -14,15 +14,15 @@ function Update () {
 function OnCollisionEnter(col : Collision)
 {
 
-		if(col.gameObject.tag == "tray")
-		{
+//		if(col.gameObject.tag == "tray")
+//		{
 //			Debug.Log("Yooo");
-			if(!velocityWasStored)
+			if(velocityWasStored)
 			{
 				storedVelocity = rigidbody.velocity;
-				velocityWasStored = true;
+//				velocityWasStored = true;
 			}
-			rigidbody.velocity.y = storedVelocity.y;
-		}
+			rigidbody.velocity.y = 3;
+//		}
 
 }
